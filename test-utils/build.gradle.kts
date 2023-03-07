@@ -12,6 +12,11 @@ repositories {
 
 dependencies {
   testImplementation(kotlin("test"))
+  testImplementation("org.mockito:mockito-inline:5.1.1")
+  testImplementation("org.mockito.kotlin:mockito-kotlin:4.1.0") {
+    exclude(module = "mockito-core")
+  }
+  testImplementation("org.assertj:assertj-core:3.24.2")
 }
 
 tasks.test {
@@ -19,5 +24,5 @@ tasks.test {
 }
 
 kotlin {
-  jvmToolchain(11)
+  jvmToolchain(17)
 }
