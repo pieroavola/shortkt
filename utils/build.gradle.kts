@@ -1,6 +1,7 @@
 plugins {
   `java-library`
-  kotlin("jvm") version "1.8.10"
+  kotlin("jvm")
+  id("org.jetbrains.dokka")
 }
 
 group = "de.pieroavola.kommons"
