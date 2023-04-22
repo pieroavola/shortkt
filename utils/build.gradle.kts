@@ -5,7 +5,7 @@ plugins {
   id("org.jetbrains.dokka")
 }
 
-group = "de.pieroavola.kommons"
+group = "de.pieroavola.shortkt"
 version = "0.0.1-SNAPSHOT"
 
 java {

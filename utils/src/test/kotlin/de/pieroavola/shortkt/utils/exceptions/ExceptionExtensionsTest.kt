@@ -1,6 +1,6 @@
-package de.pieroavola.kommons.utils.exceptions
+package de.pieroavola.shortkt.utils.exceptions
 
-import de.pieroavola.kommons.test.data.strings
+import de.pieroavola.shortkt.test.data.strings
 import org.assertj.core.api.Assertions.*
 import org.junit.jupiter.api.Test
 import java.io.IOException

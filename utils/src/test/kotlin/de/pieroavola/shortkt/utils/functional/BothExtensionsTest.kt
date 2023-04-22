@@ -1,7 +1,7 @@
-package de.pieroavola.kommons.utils.functional
+package de.pieroavola.shortkt.utils.functional
 
-import de.pieroavola.kommons.test.data.strings
-import de.pieroavola.kommons.test.data.uuids
+import de.pieroavola.shortkt.test.data.strings
+import de.pieroavola.shortkt.test.data.uuids
 import org.assertj.core.api.Assertions.*
 import org.junit.jupiter.api.Test
 

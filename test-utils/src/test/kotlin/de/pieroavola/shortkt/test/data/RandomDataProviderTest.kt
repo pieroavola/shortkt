@@ -1,7 +1,6 @@
-package de.pieroavola.kommons.test.data
+package de.pieroavola.shortkt.test.data
 
 import org.assertj.core.api.Assertions.*
-import org.assertj.core.api.ObjectAssert
 import org.junit.jupiter.api.Test
 import java.util.UUID
 
@@ -38,7 +37,7 @@ class RandomDataProviderTest {
   internal fun mapsCorrectly() {
 
     val list = (0..9).map { UUID.randomUUID() }
-    val mappingFunction: (UUID)->String = { it.toString().replace("-","") }
+    val mappingFunction: (UUID) -> String = { it.toString().replace("-", "") }
 
     RandomDataProvider.from(list).map(mappingFunction).destructuresList(list.map(mappingFunction))
   }

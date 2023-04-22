@@ -1,4 +1,4 @@
-package de.pieroavola.kommons.test.data
+package de.pieroavola.shortkt.test.data
 
 import java.util.UUID
 import kotlin.random.Random

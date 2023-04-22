@@ -1,10 +1,14 @@
-package de.pieroavola.kommons.utils.logging
+package de.pieroavola.shortkt.utils.logging
 
-import de.pieroavola.kommons.test.data.strings
-import de.pieroavola.kommons.utils.exceptions.description
+import de.pieroavola.shortkt.test.data.strings
+import de.pieroavola.shortkt.utils.exceptions.description
 import org.assertj.core.api.Assertions.*
 import org.junit.jupiter.api.Test
-import org.mockito.kotlin.*
+import org.mockito.kotlin.anyOrNull
+import org.mockito.kotlin.mock
+import org.mockito.kotlin.never
+import org.mockito.kotlin.times
+import org.mockito.kotlin.verify
 import org.slf4j.Logger
 
 class Slf4jExtensionsTest {
@@ -24,7 +28,7 @@ class Slf4jExtensionsTest {
   internal fun logsMessageOnErrorLevel() {
 
     val loggerMock = getLoggerMock()
-    val (message)= strings()
+    val (message) = strings()
 
     loggerMock.exception(message, RuntimeException())
 
@@ -35,7 +39,7 @@ class Slf4jExtensionsTest {
   internal fun logsExceptionDescriptionOnErrorLevel() {
 
     val loggerMock = getLoggerMock()
-    val (message, exceptionMessage)= strings()
+    val (message, exceptionMessage) = strings()
     val exception = RuntimeException(exceptionMessage)
 
     loggerMock.exception(message, exception)
@@ -57,7 +61,7 @@ class Slf4jExtensionsTest {
   internal fun logsStacktraceOnDebugLevelByDefault() {
 
     val loggerMock = getLoggerMock()
-    val (message, exceptionMessage)= strings()
+    val (message, exceptionMessage) = strings()
     val exception = RuntimeException(exceptionMessage)
 
     loggerMock.exception(message, exception)

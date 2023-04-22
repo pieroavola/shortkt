@@ -1,2 +1,2 @@
-rootProject.name = "kommons"
+rootProject.name = "shortkt"
 include("utils", "test-utils")

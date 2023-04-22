@@ -1,4 +1,4 @@
-package de.pieroavola.kommons.utils.functional
+package de.pieroavola.shortkt.utils.functional
 
 /**
  * Creates a tuple of type [Both] from this and [that].

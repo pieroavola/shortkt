@@ -1,4 +1,4 @@
-package de.pieroavola.kommons.utils.functional
+package de.pieroavola.shortkt.utils.functional
 
 import java.io.Serializable
 import java.util.Objects

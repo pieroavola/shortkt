@@ -1,4 +1,4 @@
-package de.pieroavola.kommons.utils.exceptions
+package de.pieroavola.shortkt.utils.exceptions
 
 /**
  * Returns the simple class name and message of the exception, leaving out the stack trace.

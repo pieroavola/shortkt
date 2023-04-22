@@ -1,6 +1,6 @@
-package de.pieroavola.kommons.utils.logging
+package de.pieroavola.shortkt.utils.logging
 
-import de.pieroavola.kommons.utils.exceptions.description
+import de.pieroavola.shortkt.utils.exceptions.description
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 
