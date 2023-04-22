@@ -1,11 +1,28 @@
 plugins {
   `java-library`
+  `maven-publish`
   kotlin("jvm")
   id("org.jetbrains.dokka")
 }
 
 group = "de.pieroavola.kommons"
-version = "1.0-SNAPSHOT"
+version = "0.0.1-SNAPSHOT"
+
+java {
+
+  sourceCompatibility = JavaVersion.VERSION_17
+  targetCompatibility = JavaVersion.VERSION_17
+
+  withSourcesJar()
+
+  registerFeature("logging") {
+    usingSourceSet(sourceSets["main"])
+  }
+}
+
+fun DependencyHandlerScope.loggingApi(dependencyNotation: String): Dependency? {
+  return "loggingApi"(dependencyNotation)
+}
 
 repositories {
   mavenCentral()
@@ -13,8 +30,8 @@ repositories {
 
 dependencies {
 
-  implementation("org.slf4j:slf4j-api:2.0.6")
-  implementation("org.slf4j:slf4j-simple:2.0.6")
+  loggingApi("org.slf4j:slf4j-api:2.0.6")
+  loggingApi("org.slf4j:slf4j-simple:2.0.6")
 
   testImplementation(kotlin("test"))
   testImplementation(project(":test-utils"))
@@ -23,6 +40,14 @@ dependencies {
     exclude(module = "mockito-core")
   }
   testImplementation("org.assertj:assertj-core:3.24.2")
+}
+
+publishing {
+  publications {
+    create<MavenPublication>("utils") {
+      from(components["java"])
+    }
+  }
 }
 
 tasks.test {
