@@ -9,7 +9,7 @@ plugins {
 }
 
 group = "de.pieroavola.shortkt"
-version = "0.0.1-SNAPSHOT"
+version = "0.0.2"
 
 java {
 
@@ -63,7 +63,7 @@ publishing {
 
       maven {
         name = "mavenCentral"
-        url = URI("https://s01.oss.sonatype.org/content/repositories/releases/")
+        url = URI("https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/")
         credentials {
           username = mavenUser
           password = mavenPassword
