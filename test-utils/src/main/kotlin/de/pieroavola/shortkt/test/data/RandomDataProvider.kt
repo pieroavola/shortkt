@@ -131,6 +131,11 @@ class RandomDataProvider<T> private constructor(
 fun uuids(): RandomDataProvider<UUID> = RandomDataProvider.generate { UUID.randomUUID() }
 
 /**
+ * Alias for [uuids]
+ */
+fun randomUuids() = uuids()
+
+/**
  * Generate a [RandomDataProvider] containing random objects of type [String].
  *
  * The strings are UUIDs with the minuses removed.
@@ -139,9 +144,19 @@ fun strings(): RandomDataProvider<String> =
   RandomDataProvider.generate { UUID.randomUUID().toString().replace("-", "") }
 
 /**
+ * Alias for [strings]
+ */
+fun randomStrings() = strings()
+
+/**
  * Generate a [RandomDataProvider] containing random objects of type [Int].
  */
 fun ints(): RandomDataProvider<Int> = RandomDataProvider.generate { Random.nextInt() }
+
+/**
+ * Alias for [ints]
+ */
+fun randomInts() = ints()
 
 /**
  * Generate a [RandomDataProvider] containing random objects of type [Double].
@@ -149,6 +164,33 @@ fun ints(): RandomDataProvider<Int> = RandomDataProvider.generate { Random.nextI
 fun doubles(): RandomDataProvider<Double> = RandomDataProvider.generate { Random.nextDouble() }
 
 /**
+ * Alias for [doubles]
+ */
+fun randomDoubles() = doubles()
+
+/**
  * Generate a [RandomDataProvider] containing random objects of type [Boolean].
  */
 fun booleans(): RandomDataProvider<Boolean> = RandomDataProvider.generate { Random.nextBoolean() }
+
+/**
+ * Alias for [booleans]
+ */
+fun randomBooleans() = booleans()
+
+/**
+ * Generate a [RandomDataProvider] containing random objects of type [Byte].
+ */
+fun bytes(): RandomDataProvider<Byte> = RandomDataProvider.from(Random.nextBytes(10).toList())
+
+/**
+ * Alias for [bytes]
+ */
+fun randomBytes() = bytes()
+
+/**
+ * Convert the [RandomDataProvider] of type [Byte] to a [ByteArray].
+ *
+ * @return [ByteArray] containing all values of the [RandomDataProvider] in order.
+ */
+fun RandomDataProvider<Byte>.toByteArray(): ByteArray = this.toList().toByteArray()
