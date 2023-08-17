@@ -24,9 +24,7 @@ java {
   }
 }
 
-fun DependencyHandlerScope.loggingApi(dependencyNotation: String): Dependency? {
-  return "loggingApi"(dependencyNotation)
-}
+fun DependencyHandlerScope.loggingApi(dependencyNotation: String) = "loggingApi"(dependencyNotation)
 
 repositories {
   mavenCentral()
@@ -34,13 +32,13 @@ repositories {
 
 dependencies {
 
-  loggingApi("org.slf4j:slf4j-api:2.0.6")
-  loggingApi("org.slf4j:slf4j-simple:2.0.6")
+  loggingApi("org.slf4j:slf4j-api:2.0.7")
+  loggingApi("org.slf4j:slf4j-simple:2.0.7")
 
   testImplementation(kotlin("test"))
   testImplementation(project(":test-utils"))
-  testImplementation("org.mockito:mockito-inline:5.1.1")
-  testImplementation("org.mockito.kotlin:mockito-kotlin:4.1.0") {
+  testImplementation("org.mockito:mockito-core:5.4.0")
+  testImplementation("org.mockito.kotlin:mockito-kotlin:5.1.0") {
     exclude(module = "mockito-core")
   }
   testImplementation("org.assertj:assertj-core:3.24.2")
