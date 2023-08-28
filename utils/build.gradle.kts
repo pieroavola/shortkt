@@ -9,7 +9,7 @@ plugins {
 }
 
 group = "de.pieroavola.shortkt"
-version = "0.0.4-SNAPSHOT"
+version = "0.0.4"
 
 java {
 
