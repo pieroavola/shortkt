@@ -1,4 +1,5 @@
 *
-!/codeStyles
-!/codeStyles/*
-!/.gitignore
+!codeStyles
+!codeStyles/*
+!.gitignore
+!icon.svg
